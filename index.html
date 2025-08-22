@@ -39,6 +39,7 @@
       margin-bottom: 15px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       transition: transform 0.2s ease-in-out;
     }
 
@@ -62,6 +63,13 @@
       color: #b3b3b3;
     }
 
+    .duration {
+      font-size: 0.9em;
+      color: #b3b3b3;
+      margin-right: 10px;
+      white-space: nowrap;
+    }
+
     audio {
       width: 100%;
       margin-top: 10px;
@@ -74,9 +82,14 @@
         align-items: flex-start;
       }
 
+      .duration {
+        margin: 5px 0;
+      }
+
       .track-info {
         margin-left: 0;
         margin-top: 10px;
+        width: 100%;
       }
     }
   </style>
@@ -86,123 +99,142 @@
 
   <div class="playlist">
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Bruno Mars</h3>
         <p>Uptown Funk</p>
         <audio controls>
           <source src="Bruno_Mars_Uptown_Funk.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Donna Summer</h3>
         <p>Hot Stuff</p>
         <audio controls>
           <source src="donna_summer_hot_stuff.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Europe</h3>
         <p>Final Countdown</p>
         <audio controls>
           <source src="final_countdown.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Journey</h3>
         <p>Don’t Stop Believin’</p>
         <audio controls>
           <source src="dont_stop_beliven-Jorney.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Journey</h3>
         <p>Separate Ways</p>
         <audio controls>
           <source src="separate_ways_jorney.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Bon Jovi</h3>
         <p>It’s My Life</p>
         <audio controls>
           <source src="It's_My_Life.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Bon Jovi</h3>
         <p>Livin' on a Prayer</p>
         <audio controls>
           <source src="Livin'_On_A_Prayer.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Mix 80’s</h3>
         <p>Jump, Eye of the Tiger, Maniac...</p>
         <audio controls>
           <source src="mix_80tas_jump_eye_of_the_tiger_iwas_made_maniac_take_on_me.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Mix en Español</h3>
         <audio controls>
           <source src="mix_en_español.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Mix Selena & Disco</h3>
         <audio controls>
           <source src="Mix_selena_YMCA_Beegees.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
 
     <div class="track">
+      <span class="duration">--:--</span>
       <div class="track-info">
         <h3>Toto</h3>
         <p>Hold the Line</p>
         <audio controls>
           <source src="Toto_Hold_The_Line.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
         </audio>
       </div>
     </div>
   </div>
+
+  <script>
+    // Convertir segundos a mm:ss
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    // Asignar duración a cada pista
+    document.querySelectorAll(".track").forEach(track => {
+      const audio = track.querySelector("audio");
+      const durationEl = track.querySelector(".duration");
+      
+      audio.addEventListener("loadedmetadata", () => {
+        durationEl.textContent = formatTime(audio.duration);
+      });
+    });
+  </script>
 </body>
 </html>
