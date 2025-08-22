@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Playlist</title>
   <style>
     body {
@@ -10,66 +9,38 @@
       background: #111;
       color: #fff;
       text-align: center;
-      padding: 40px;
+      padding: 20px;
     }
-    h1 { color: #00ffcc; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 12px 0; }
-    audio { width: 80%; margin-top: 8px; }
+    h1 {
+      margin-bottom: 20px;
+    }
+    audio {
+      width: 80%;
+      margin: 10px 0;
+    }
+    .track {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1>🎶 Mi Playlist</h1>
-  <p>Haz clic en la canción que quieras reproducir:</p>
-  <ul>
-    <li>
-      Separate Ways – Journey <br>
-      <audio controls>
-        <source src="playlist/separate_ways_journey.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-    <li>
-      Donna Summer – Hot Stuff <br>
-      <audio controls>
-        <source src="playlist/donna_summer_hot_stuff.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-    <li>
-      Don’t Stop Believin’ – Journey <br>
-      <audio controls>
-        <source src="playlist/dont_stop_believin_journey.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-    <li>
-      Final Countdown – Europe <br>
-      <audio controls>
-        <source src="playlist/final_countdown.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-    <li>
-      It’s My Life – Bon Jovi <br>
-      <audio controls>
-        <source src="playlist/its_my_life.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-    <li>
-      Livin’ On A Prayer – Bon Jovi <br>
-      <audio controls>
-        <source src="playlist/livin_on_a_prayer.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-    <li>
-      Mix 80s – Jump, Eye of the Tiger, Maniac, Take on Me <br>
-      <audio controls>
-        <source src="playlist/mix_80s_jump_eye_maniac_take_on_me.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-    <li>
-      Mix Selena – YMCA – Bee Gees <br>
-      <audio controls>
-        <source src="playlist/mix_selena_ymca_bee_gees.mp3" type="audio/mpeg">
-      </audio>
-    </li>
-  </ul>
+  <h1>🎶 Mi Playlist 🎶</h1>
+  
+  <div class="track">
+    <h3>Bruno Mars - Uptown Funk</h3>
+    <audio controls>
+      <source src="Bruno_Mars_Uptown_Funk.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
+  <div class="track">
+    <h3>Donna Summer - Hot Stuff</h3>
+    <audio controls>
+      <source src="donna_summer_hot_stuff.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
 </body>
 </html>
